@@ -13,8 +13,6 @@ def question_0(answerList):
     ]
     questions0_answers = inquirer.prompt(questions)
     answerList.update(questions0_answers)
-    # print(questions0_answers)
-    # print(answerList)
     return answerList
 
 def question_1(answerList):
@@ -26,8 +24,6 @@ def question_1(answerList):
     ]
     questions1_answers = inquirer.prompt(questions)
     answerList.update(questions1_answers)
-    # print(questions1_answers)
-    # print(answerList)
     return answerList
 
 def question_2(answerList):
@@ -39,8 +35,6 @@ def question_2(answerList):
     ]
     questions2_answers = inquirer.prompt(questions)
     answerList.update(questions2_answers)
-    # print(questions1_answers)
-    # print(answerList)
     return answerList
   
 def question_3(answerList):
@@ -52,8 +46,6 @@ def question_3(answerList):
     ]
     questions3_answers = inquirer.prompt(questions)
     answerList.update(questions3_answers)
-    # print(questions1_answers)
-    # print(answerList)
     return answerList
 
 
@@ -72,13 +64,11 @@ def findthecandidate(ansList):
     candidate_list = []
 
     for ans in ansList: # loop the  anwers that we got
-      #find by geo
       if ans == 'geo_question':
         for g in menu:
           geo_value = menu[g]['main_category']
 
           if geo_value == ansList[ans]:
-            # print("GEO matched!")
             if len(geo_candidate_list) == 0: # check if there is any thing on the list
                 geo_candidate_list.append(g)
             elif len(geo_candidate_list) > 0: # if the list is not empty, just add the new found item
@@ -130,16 +120,10 @@ def findthecandidate(ansList):
                 
     # remove if there is allergy set in the anwer
     for menu_item in candidate_list:
-      #print(menu_item)
-      #print(menu[menu_item])
       allergy_list = menu[menu_item]['allergies'].split(', ')
-      #print("allergy_list :",allergy_list)
       for allergy in allergy_list:
-          #print(ansList['third_question'],"=========")
           if allergy == ansList['third_question']:
             candidate_list.remove(menu_item)
-          # if sup_menu == 'allergies': # if ther is allergies set up in data base
-            # print(menu
 
 
             
