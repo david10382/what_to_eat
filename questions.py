@@ -146,7 +146,7 @@ def findthecandidate(ansList):
 
     # check the candidate list
 
-    print(candidate_list)
+    resultDisplay(candidate_list)
                 
 
 
