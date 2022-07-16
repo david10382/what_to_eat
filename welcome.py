@@ -1,4 +1,6 @@
 import inquirer
+from random_gen import menu_random
+from data import menu
 
 def user_selections(welcome_answerList):
     questions = [
@@ -11,11 +13,29 @@ def user_selections(welcome_answerList):
     welcome_answerList.update(answers)
     return welcome_answerList
 
+# next question, processor
+# NO => good bye page
+# Surprise => random menu generator
+def find_user_answer(welcome_answerList):
+    final_ans = welcome_answerList['first_question'].lower()
+    candidate_menu = []
+    # next question, processor
+    if final_ans == 'yes':
+        #return secondquestion
+
+        print("go to next question")
+    elif final_ans == 'no':
+        #good bye page
+        print("go to good bye page")
+    elif final_ans == 'surprise me!':
+        #random menu generator
+        menu_random()
+
 
 def init_welcome():
     welcome_answerList = {}
     user_selections(welcome_answerList)
-
+    find_user_answer(welcome_answerList)
     
 
 
