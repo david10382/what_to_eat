@@ -128,6 +128,19 @@ def findthecandidate(ansList):
                     if item not in candidate_list:
                       candidate_list.append(item)
                 
+    # remove if there is allergy set in the anwer
+    for menu_item in candidate_list:
+      #print(menu_item)
+      #print(menu[menu_item])
+      allergy_list = menu[menu_item]['allergies'].split(', ')
+      #print("allergy_list :",allergy_list)
+      for allergy in allergy_list:
+          #print(ansList['third_question'],"=========")
+          if allergy == ansList['third_question']:
+            candidate_list.remove(menu_item)
+          # if sup_menu == 'allergies': # if ther is allergies set up in data base
+            # print(menu
+
 
             
 
