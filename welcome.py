@@ -1,5 +1,6 @@
 import inquirer
 from random_gen import menu_random
+from goodbye import goodbye
 from data import menu
 
 def user_selections(welcome_answerList):
@@ -26,7 +27,7 @@ def find_user_answer(welcome_answerList):
         print("go to next question")
     elif final_ans == 'no':
         #good bye page
-        print("go to good bye page")
+        goodbye()
     elif final_ans == 'surprise me!':
         #random menu generator
         menu_random()
