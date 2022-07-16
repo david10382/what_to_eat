@@ -28,7 +28,7 @@ def get_menu(word):
 
 
 def init_get_menu():
-    menu_item = input('what menu item do you want to check ingredients?:')
+    menu_item = input('What menu item do you want to check ingredients? ex. Pho, Hamburger:')
     get_menu (menu_item)
     
 
