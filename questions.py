@@ -93,8 +93,8 @@ def findthecandidate(ansList):
                           subcat_list.append(sub_item)
 
 
-      # find by ingredients
-      if ans == 'second_question': # we know that first and second question are looking for ingredients
+      # find by proteins
+      if ans == 'second_question': # we know that first and second question are looking for protein
         # loop from the slected GEO list
         # print("when this?")
         for item in menu:
@@ -102,16 +102,10 @@ def findthecandidate(ansList):
             if item == selected_geo: # when item in the menu matched with selected 'main_category'
               # print("selected_geo : ",selected_geo)
               # for k in menu:
-              ingredient_list = menu[item]['ingredient'].split(', ') #split the ingredients by ', ' and make it a list
-              for intg_item in ingredient_list: # looping trough the ingredent list
-                checkCloseMatch = len(get_close_matches(ansList[ans], ingredient_list, 5, 0.6))
+              protein_list = menu[item]['protein'].split(', ') #split the proteins by ', ' and make it a list
+              for intg_item in protein_list: # looping trough the ingredent list
+                checkCloseMatch = len(get_close_matches(ansList[ans], protein_list, 5, 0.6))
                 if (checkCloseMatch > 0) or intg_item == ansList[ans]: # then check if any of the asnwer match ingredeints
-                  if len(candidate_list) == 0: # check if there is any thing on the list
-                    candidate_list.append(item)
-                  elif len(candidate_list) > 0: # if the list is not empty, just add the new found item
-                    if item not in candidate_list:
-                      candidate_list.append(item)
-                elif  ansList[ans] == 'vegetarian' and intg_item == 'vegetarian':
                   if len(candidate_list) == 0: # check if there is any thing on the list
                     candidate_list.append(item)
                   elif len(candidate_list) > 0: # if the list is not empty, just add the new found item
