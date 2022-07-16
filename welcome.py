@@ -1,6 +1,7 @@
 import inquirer
 from random_gen import menu_random
 from goodbye import goodbye
+from questions import question_list
 from data import menu
 
 def user_selections(welcome_answerList):
@@ -23,8 +24,8 @@ def find_user_answer(welcome_answerList):
     # next question, processor
     if final_ans == 'yes':
         #return secondquestion
-
-        print("go to next question")
+        question_list()
+        # print("go to next question")
     elif final_ans == 'no':
         #good bye page
         goodbye()
