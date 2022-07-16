@@ -66,6 +66,76 @@ def resultDisplay(result):
   else:
     print("Sorry, we can't find your match")
 
+def findthecandidate(ansList):
+    geo_candidate_list = []
+    subcat_list = []
+    candidate_list = []
+
+    for ans in ansList: # loop the  anwers that we got
+      #find by geo
+      if ans == 'geo_question':
+        for g in menu:
+          geo_value = menu[g]['main_category']
+
+          if geo_value == ansList[ans]:
+            # print("GEO matched!")
+            if len(geo_candidate_list) == 0: # check if there is any thing on the list
+                geo_candidate_list.append(g)
+            elif len(geo_candidate_list) > 0: # if the list is not empty, just add the new found item
+              if g not in geo_candidate_list:
+                geo_candidate_list.append(g)
+
+      # Find by sub_category
+      if ans == 'first_question':
+          for sub_item in menu:
+            sub_value = menu[sub_item]['sub_category']
+            for selected_geo in geo_candidate_list:
+              if sub_item == selected_geo:
+                  base_list = sub_value.split(', ')
+                  for base in base_list:
+
+                    
+                    if base == ansList[ans]:
+                      if len(subcat_list) == 0: # check if there is any thing on the list
+                        subcat_list.append(sub_item)
+                      elif len(subcat_list) > 0: # if the list is not empty, just add the new found item
+                        if sub_item not in subcat_list:
+                          subcat_list.append(sub_item)
+
+
+      # find by ingredients
+      if ans == 'second_question': # we know that first and second question are looking for ingredients
+        # loop from the slected GEO list
+        # print("when this?")
+        for item in menu:
+          for selected_geo in subcat_list:
+            if item == selected_geo: # when item in the menu matched with selected 'main_category'
+              # print("selected_geo : ",selected_geo)
+              # for k in menu:
+              ingredient_list = menu[item]['ingredient'].split(', ') #split the ingredients by ', ' and make it a list
+              for intg_item in ingredient_list: # looping trough the ingredent list
+                checkCloseMatch = len(get_close_matches(ansList[ans], ingredient_list, 5, 0.6))
+                if (checkCloseMatch > 0) or intg_item == ansList[ans]: # then check if any of the asnwer match ingredeints
+                  if len(candidate_list) == 0: # check if there is any thing on the list
+                    candidate_list.append(item)
+                  elif len(candidate_list) > 0: # if the list is not empty, just add the new found item
+                    if item not in candidate_list:
+                      candidate_list.append(item)
+                elif  ansList[ans] == 'vegetarian' and intg_item == 'vegetarian':
+                  if len(candidate_list) == 0: # check if there is any thing on the list
+                    candidate_list.append(item)
+                  elif len(candidate_list) > 0: # if the list is not empty, just add the new found item
+                    if item not in candidate_list:
+                      candidate_list.append(item)
+                
+
+            
+
+    # check the candidate list
+
+    print(candidate_list)
+                
+
 
 def question_list():
   answerList = {}
@@ -74,4 +144,5 @@ def question_list():
   question_2(answerList)
   question_3(answerList)
 
+  findthecandidate(answerList)
 
