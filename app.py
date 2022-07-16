@@ -19,7 +19,6 @@ def get_menu(word):
                 print (search_result['ingredient'])
                 print("Bon Appétit !!!")
             elif user_input == "N":
-                print("let go back to main_app")
                 homepage.init_main_page()
 
     else:
