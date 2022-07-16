@@ -1,6 +1,7 @@
 import inquirer
 from welcome import init_welcome
 from app import init_get_menu
+from goodbye import goodbye
 
 home_questions = [
   inquirer.List('home_page',
@@ -16,5 +17,7 @@ def search_user_answer(user_ans):
     init_welcome()
   elif user_ans == 'quick search':
     init_get_menu()
+  elif user_ans == 'exit':
+    goodbye()
 
 search_user_answer(answers_home)
