@@ -1,6 +1,6 @@
 import inquirer
 from welcome import init_welcome
-
+from app import init_get_menu
 
 home_questions = [
   inquirer.List('home_page',
@@ -14,5 +14,7 @@ def search_user_answer(user_ans):
   user_ans = answers_home['home_page'].lower()
   if user_ans == 'selections':
     init_welcome()
+  elif user_ans == 'quick search':
+    init_get_menu()
 
 search_user_answer(answers_home)
