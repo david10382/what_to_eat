@@ -11,7 +11,9 @@ Furthermore, the user is able to confirm ingredients of the menu items which can
 
 The development process began with a Trello board to help with listing the desired fucntions and features of the appllication. It has also helped with tracking progress of the build of the application and prioritising the deliverables.  
  
- ![This is an image](./)
+ ![Trello board](./images/Trello%20board%20for%20T1A3.png)
+ ![Trello board time line](./images/Trello%20board%20time%20line.png)
+ ![Trello board prioritization](./images/Trello%20board%20time%20line%20-%20priortisation.png)
 
 The development process began with mapping the application structure. It has aided in determining the functionality of the application, as well as in aiding the relationships between fucntions and the dictionary containing the menu items. 
 
@@ -19,13 +21,13 @@ The development process began with mapping the application structure. It has aid
 
 Next step in the process was to map the application structure. Mapping the structure of the application helped determine the functionality of the application, as well as in aiding the relationships between fucntions and the dictionary containing the menu items.
 
-![This is an image](./images/Application%20Strucutre%20Overview.drawio.png)
+![Application Structure](./images/Application%20Strucutre%20Overview.drawio.png)
 
 2. Selection Process flow chart 
 
 The Selection Process flow chart explains the steps in which the feature interacts with the dictionary of menu items and user inputs. The Selection process involves five questions, utilising the enquirer library, with set answers that return a menu item. As the user inputs their choices, the choices are stored in a temporary list which compares and filters the possible menu items. 
 
-![This is an image](./images/Selection%20Process%20flow%20chart.drawio.png)
+![Selection process flow chart](./images/Selection%20Process%20flow%20chart.drawio.png)
 
 4. Testing methods 
 
@@ -92,3 +94,7 @@ Any Allergies
 3. Random generator 
 
         pick the 'Surprise me!' option in the beginning of the Selection stage.
+
+# Link to github 
+
+https://github.com/david10382/what_to_eat
