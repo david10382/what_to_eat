@@ -1,4 +1,3 @@
-import unittest
 import random_gen
 
 
@@ -13,3 +12,4 @@ def test_randg():
         print("Test passed")
 
 test_randg()
+
