@@ -25,7 +25,7 @@ def find_user_answer(welcome_answerList):
     if final_ans == 'yes':
         #return secondquestion
         question_list()
-        # print("go to next question")
+        
     elif final_ans == 'no':
         #good bye page
         goodbye()
