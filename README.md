@@ -81,7 +81,10 @@ The application requires the user have  inquirerer package installed on their co
 
 
 
+
 # Usage
+
+To begin running the app, run ```python3 main_app.py``` in the terminal.
 
 1. Selection Process 
     Selection process is named 'Selections' in the application, and as explained above, is a feature that filters user choices and returns a menu item by comparing the dictionary of menu items. The user must go through and pick answers from five questions:
