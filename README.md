@@ -30,6 +30,28 @@ The Selection Process flow chart explains the steps in which the feature interac
 ![Selection process flow chart](./images/Selection%20Process%20flow%20chart.drawio.png)
 
 4. Testing methods 
+Integrated Testing (big bang approach)
+
+https://github.com/david10382/what_to_eat/blob/main/Testing%20/Integrated%20Testing%20for%20What%20to%20eat%20App.pdf
+
+Random generator testing 
+
+```
+import random_gen
+
+
+def test_randg():
+    firstAns = str(random_gen.menu_random())
+    secondAns = str(random_gen.menu_random())
+    thirdAns = str(random_gen.menu_random())
+    
+    if firstAns == secondAns and secondAns == thirdAns:
+        print("Error")
+    else:
+        print("Test passed")
+
+test_randg()
+```
 
 # Features and Functionality 
 'What to eat' employs the following libraries:
